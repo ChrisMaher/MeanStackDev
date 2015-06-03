@@ -27,10 +27,14 @@
         <h3 class="text-center">Login</h3>
 		<form data-ng-submit="signin()" class="signin form-horizontal" autocomplete="off">
 			<fieldset>
-                <div data-ng-show="error" class="text-center text-danger">
-                    <strong data-ng-bind="error"></strong>
-                </div>
                 <div class="form-group">
+
+                <div data-ng-show="error" class="text-center text-danger">
+                        <div class="alert alert-danger" role="alert">
+                            <strong data-ng-bind="error"></strong>
+                        </div>
+                </div>
+
                     <div class="input-group input-group-lg">
                         <span class="input-group-addon">
                         <i class="text-muted glyphicon glyphicon-user"></i>
@@ -39,18 +43,20 @@
                     </div>
                 </div>
                 <div class="form-group">
+
                     <div class="input-group input-group-lg" >
                         <span class="input-group-addon">
-                        <i class="text-muted glyphicon glyphicon-asterisk"></i>
+                            <i class="text-muted glyphicon glyphicon-asterisk"></i>
                         </span>
-                        <input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
+                            <input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
                     </div>
-                </div>
+                </div></fieldset>
+
 				<div class="text-center form-group">
 					<button type="submit" class="btn btn-success btn-lg btn-block">Sign in</button>
 
 				</div>
-				<div class="forgot-password">
+				<div class="forgot-password text-center">
 					<a href="/#!/password/forgot">Forgot your password?</a>
 
 				</div>
