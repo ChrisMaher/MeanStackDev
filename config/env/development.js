@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://mean:Dublin12@ds033617.mongolab.com:33617/mean',
+	db: 'localhost:27017',
 	app: {
-		title: 'starterApp - Development Environment'
+		title: 'MeanApp - Development Environment'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
