@@ -2,13 +2,18 @@
 .cust-profile{
 
     font-size: 250px;
-
-
+    
 }
 
 .checkbox-left{
 
     width: 10%;
     text-align: left;
+
+}
+
+.cust-list{
+
+    font-size: 100px;
 
 }
