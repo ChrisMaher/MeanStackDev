@@ -1,8 +1,52 @@
-<section data-ng-controller="HomeController">
+<section data-ng-controller="HomeController" data-ng-init="find()">
+    <br>
+
+    <div class="col-sm-12" id="below-navbar">
+
+        <h2>Top Row After Nav - Breadcrumbs</h2>
+
+
+    </div>
+    <div class="col-lg-9"  id="main-deals">
+
+        <h2>Main Deal List Left</h2>
+
+        <div class="row">
+
+           <!--Deals Array Start-->
+            <div class="list-group">
+                <a data-ng-repeat="deal in deals" data-ng-href="#!/deals/{{deal._id}}" class="list-group-item">
+                    <small class="list-group-item-text">
+                        Posted on
+                        <span data-ng-bind="deal.created | date:'medium'"></span>
+                        by
+                        <span data-ng-bind="deal.user.displayName"></span>
+                    </small>
+                    <h4 class="list-group-item-heading" data-ng-bind="deal.name"></h4>
+                </a>
+            </div>
+            <div class="alert alert-warning text-center" data-ng-hide="!deals.$resolved || deals.length">
+                No Deals yet, why don't you <a href="/#!/deals/create">create one</a>?
+            </div>
+            <!--Deals Array End-->
+
+        </div>
+
+
+    </div>
+    <div class="col-lg-3"  id="right-column">
+
+        <h2>Right <br> Column</h2>
+
+
+    </div>
+
+
+    <div class="col-sm-12" id="footer">
     <div class="row">
 
 
-        <div class="col-sm-6" ng-repeat="alert in alerts">
+        <div class="col-lg-6" ng-repeat="alert in alerts">
             <div class="row">
                 <div class="col-xs-4">
                     <h1 class="pull-right">
@@ -23,5 +67,6 @@
         </div>
 
     </div>
+        </div>
 
 </section>

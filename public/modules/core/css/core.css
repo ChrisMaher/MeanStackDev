@@ -17,3 +17,39 @@
 body {
 	background-color: #eeeeee;
 }
+
+#footer{
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    border-top: #000000 1px solid;
+    border-bottom: #000000 1px solid;
+
+}
+
+#below-navbar{
+
+    min-height: 100px;
+    border: #000000 1px solid;
+    padding: 15px;
+
+}
+
+#main-deals{
+
+    min-height: 2200px;
+    border: #000000 1px solid;
+    padding: 15px;
+
+}
+#right-column{
+
+    min-height: 2200px;
+    border: #000000 1px solid;
+    padding: 15px;
+
+}
