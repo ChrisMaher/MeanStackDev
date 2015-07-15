@@ -67,7 +67,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 ]);
 
 // Deals controller
-angular.module('deals').controller('DealsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Deals',
+angular.module('core').controller('DealsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Deals',
     function($scope, $stateParams, $location, Authentication, Deals) {
         $scope.authentication = Authentication;
 

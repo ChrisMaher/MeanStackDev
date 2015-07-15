@@ -1,39 +1,126 @@
-<section data-ng-controller="HomeController" data-ng-init="find()">
-    <br>
+
 
     <div class="col-sm-12" id="below-navbar">
 
-        <h2>Top Row After Nav - Breadcrumbs</h2>
+        <ul class="nav nav-tabs img-rounded" id="hottest-tabs">
+            <li role="presentation" class="active"><a href="#"><i class="glyphicon glyphicon-thumbs-up"></i> Hottest </a></li>
+            <li role="presentation"><a href="#"><i class="glyphicon glyphicon-arrow-up"></i> Newest </a></li>
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="glyphicon glyphicon-star"></i> Retailers <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li role="presentation"><a href="#">LittleWoods</a></li>
+                    <li role="presentation"><a href="#">Argos</a></li>
+                    <li role="presentation"><a href="#">ScrewFix</a></li>
+                    <li role="presentation"><a href="#">Amazon</a></li>
+                    <li role="presentation"><a href="#">Penneys</a></li>
+                    <li role="presentation"><a href="#">Tesco</a></li>
+                    <li role="presentation"><a href="#">Lidl</a></li>
+                    <li role="presentation"><a href="#">Aldi</a></li>
+                </ul>
+            </li>
+        </ul>
 
 
     </div>
+
+
+
+<section data-ng-controller="HomeController">
+
+
+    <section data-ng-controller="DealsController" data-ng-init="find()">
     <div class="col-lg-9"  id="main-deals">
 
-        <h2>Main Deal List Left</h2>
-
-        <div class="row">
-
            <!--Deals Array Start-->
-            <div class="list-group">
+
+            <div class="list-group-home-deals">
                 <a data-ng-repeat="deal in deals" data-ng-href="#!/deals/{{deal._id}}" class="list-group-item">
-                    <small class="list-group-item-text">
-                        Posted on
-                        <span data-ng-bind="deal.created | date:'medium'"></span>
-                        by
-                        <span data-ng-bind="deal.user.displayName"></span>
-                    </small>
-                    <h4 class="list-group-item-heading" data-ng-bind="deal.name"></h4>
+
+                    <div class="col-lg-12 no-padding-left" >
+
+                        <div class="col-lg-2" id="left-box">
+
+                            <!--<div class="left-box-one"><h4 class="list-group-item-heading" data-ng-bind="deal.name"></h4></div>-->
+
+
+                           <div class="left-box-one">
+
+                               <h3 class="list-group-item-heading" data-ng-bind="deal.name"></h3>
+
+                           </div>
+
+
+
+
+                            <div class="left-box-two">
+
+                                <div class="btn-group-vertical hot-cold-buttons" role="group" aria-label="Vertical button group">
+                                    <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-arrow-up"></i></button>
+                                    <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-arrow-down"></i></button>
+                                    </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="col-lg-8" id="middle-box">
+
+
+                            <div class="col-lg-12 middle-title">Product Title</div>
+
+                            <div class="col-lg-12 middle-product-details">Product Details</div>
+
+                            <div class="col-lg-12 middle-post-details">
+
+                                <div class="col-lg-6 middle-posted-by">Posted By <span data-ng-bind="deal.user.displayName"></span></div>
+                                <div class="col-lg-6 middle-time-of-posting">Posted On <span data-ng-bind="deal.created | date:'mediumDate'"></span></div>
+
+                            </div>
+
+
+                            <!--<small class="list-group-item-text">-->
+                                <!--Posted on-->
+                                <!--<span data-ng-bind="deal.created | date:'medium'"></span>-->
+                                <!--by-->
+                                <!--<span data-ng-bind="deal.user.displayName"></span>-->
+                            <!--</small>-->
+
+
+                        </div>
+
+                        <div class="col-lg-2"  id="right-box">
+
+                            <h4 class="list-group-item-heading" data-ng-bind="deal.name"></h4>
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+
                 </a>
             </div>
+
+
+
             <div class="alert alert-warning text-center" data-ng-hide="!deals.$resolved || deals.length">
                 No Deals yet, why don't you <a href="/#!/deals/create">create one</a>?
             </div>
+
             <!--Deals Array End-->
 
-        </div>
+
 
 
     </div>
+    </section>
     <div class="col-lg-3"  id="right-column">
 
         <h2>Right <br> Column</h2>
@@ -45,7 +132,7 @@
     <div class="col-sm-12" id="footer">
     <div class="row">
 
-
+        <div class="margin">
         <div class="col-lg-6" ng-repeat="alert in alerts">
             <div class="row">
                 <div class="col-xs-4">
@@ -64,6 +151,7 @@
                     <span class="text-muted">{{alert.description}}</span>
                 </div>
             </div>
+        </div>
         </div>
 
     </div>
