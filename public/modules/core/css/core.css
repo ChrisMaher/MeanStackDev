@@ -3,7 +3,7 @@
 }
 .container{
 
-    padding: 0px;
+    /*padding: 0px;*/
 
 }
 
@@ -47,7 +47,7 @@ body {
 
 #main-deals{
 
-    min-height: 2200px;
+    min-height: 2300px;
     /*border: #000000 1px solid;*/
     padding: 15px;
     background-color: #FFFFFF;
@@ -56,22 +56,51 @@ body {
     border-left: #dddddd 1px solid;
 
 }
-#right-column{
+.right-column{
 
-    min-height: 2200px;
-    /*border: #000000 1px solid;*/
+    min-height: 2342px;
     padding: 15px;
     background-color: #FFFFFF;
     border-top: #dddddd 1px solid;
     border-bottom: #dddddd 1px solid;
     border-right: #dddddd 1px solid;
+    border-right: 1px solid #DDDDDD;
+
+}
+
+.right-column-inner-one{
+
+
+    border: 1px solid #DDDDDD;
+    padding-left: 0px;
+    height: 410px;
+    margin-bottom: 10px;
+
+}
+
+.right-column-inner-two{
+
+
+    border: 1px solid #DDDDDD;
+    padding-left: 0px;
+    height: 410px;
+    margin-bottom: 10px;
+}
+
+.right-column-inner-three{
+
+
+    border: 1px solid #DDDDDD;
+    padding-left: 0px;
+    height: 410px;
+    margin-bottom: 10px;
 
 }
 
 .list-group-home-deals .list-group-item{
 
     /*padding: 10px;*/
-    height: 150px;
+    height: 200px;
     margin-bottom: 10px;
     
 }
@@ -106,10 +135,23 @@ body {
     line-height: 50px;
     text-decoration: none;
     padding: 0 10px;
-    color: #F4F4F2;
     text-transform: uppercase;
     font-size: 14px;
-    background: #008F82;
+    /*background: #008F82;*/
+
+    font-family: "DinCondensedMedium", Helvetica, Arial, Sans-serif;
+    font-size: 1.75rem;
+    color: #464745;
+    text-transform: uppercase;
+
+    vertical-align: middle;
+    padding-left: 10px;
+
+}
+
+.navabar-padding-20{
+
+    margin-left: 20px;
 
 }
 
@@ -121,9 +163,15 @@ body {
     line-height: 50px;
     text-decoration: none;
     padding: 0 10px;
-    color: #F4F4F2;
+    color: #FFFFFF;
     text-transform: uppercase;
     font-size: 18px;
+
+}
+
+.navbar-default .navbar-brand:hover{
+
+    color: #FFFFFF;
 
 }
 
@@ -137,6 +185,34 @@ body {
 
     border-top: #008F82 4px solid;
 
+
+}
+
+.navbar-default .navbar-nav > li > a {
+
+    font-family: "DinCondensedMedium", Helvetica, Arial, Sans-serif;
+    font-size: 1.75rem;
+    color: #F5F5F5;
+    text-transform: uppercase;
+
+}
+
+.navbar .divider-vertical {
+    height: 50px;
+    margin: 0 9px;
+    border-right: 1px solid #ffffff;
+    border-left: 1px solid #f2f2f2;
+}
+
+.navbar-inverse .divider-vertical {
+    border-right-color: #222222;
+    border-left-color: #111111;
+}
+
+@media (max-width: 767px) {
+    .navbar-collapse .nav > .divider-vertical {
+        display: none;
+    }
 }
 
 .dropdown-menu {
@@ -206,7 +282,7 @@ body {
 
 #below-navbar{
 
-    background-color: transparent;
+    /*background-color: transparent;*/
     width: 100%;
 }
 
@@ -224,7 +300,7 @@ body {
 
 #left-box{
 
-    height: 130px;
+    height: 180px;
     /*background-color: #0040D0;*/
     border-right: 1px solid #DDDDDD;
 
@@ -232,14 +308,14 @@ body {
 #middle-box{
 
     /*padding: 5px;*/
-    height: 130px;
+    height: 180px;
 
 }
 
 #right-box{
 
     /*padding: 5px;*/
-    height: 130px;
+    height: 180px;
     border-left: 1px solid #DDDDDD;
 
 }
@@ -248,7 +324,7 @@ body {
 
     /*border: 1px solid #000000;*/
 
-    height: 60px;
+    height: 80px;
     text-align: center;
     vertical-align: text-top;
 
@@ -288,7 +364,7 @@ body {
 
 .middle-title{
 
-    height: 45px;
+    height: 50px;
     font-weight: bold;
     font-size: 18px;
 
@@ -296,7 +372,7 @@ body {
 
 .middle-product-details{
 
-    height: 60px;
+    height: 100px;
     display: block;
     word-wrap: break-word;
     -moz-hyphens: auto;
@@ -318,6 +394,98 @@ body {
     display: block;
 
 }
+
+#hottest-tabs{
+
+    float: left;
+
+}
+
+#submit-tabs{
+
+    float: right;
+
+}
+
+.pagination{
+
+    padding: 3px;
+
+}
+
+.spotlight-deal{
+
+    height: 200px;
+    margin-bottom: 10px;
+    border: 1px solid #dddddd;
+
+}
+
+.body-content{
+
+    background-color: #FFFFFF;
+
+}
+
+.new-deal-form label{
+
+
+    margin: 10px;
+    text-transform: capitalize;
+
+}
+
+.new-deal-form .controls{
+
+
+    margin: 10px;
+
+}
+
+.sub-label{
+
+    padding: 2px;
+    margin-left: 5px;
+
+}
+
+.padding-radio{
+    padding: 10px;
+}
+
+.create-deal-image-upload{
+
+    /*border: 1px solid #dddddd;*/
+    height: 700px;
+    margin-top: 10px;
+
+
+}
+
+.create-deal-image-detais{
+
+    height: 300px;
+    background-color: #EEEEEE;
+
+}
+
+.create-deal-image-preview{
+
+    background-color: #FFFFFF;
+    height: 300px;
+    border: 10px solid #EEEEEE;
+
+
+}
+
+.create-body{
+
+    background-color: #FFFFFF;
+
+}
+
+
+
 
 
 
