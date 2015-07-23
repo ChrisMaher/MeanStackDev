@@ -1,3 +1,8 @@
+.body a{
+
+    transition: color 0.3s ease-in-out;
+}
+
 .content {
 	margin-top: 50px;
 }
@@ -113,41 +118,9 @@ body {
 
 }
 
-.navbar-default .navbar-nav > li > a {
 
-    color: #FFFFFF;
 
-    display: block;
-    line-height: 50px;
-    text-decoration: none;
-    padding: 0 10px;
-    color: #F4F4F2;
-    text-transform: uppercase;
-    font-size: 14px;
 
-}
-
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:active {
-
-    color: #FFFFFF;
-
-    display: block;
-    line-height: 50px;
-    text-decoration: none;
-    padding: 0 10px;
-    text-transform: uppercase;
-    font-size: 14px;
-    /*background: #008F82;*/
-
-    font-family: "DinCondensedMedium", Helvetica, Arial, Sans-serif;
-    font-size: 1.75rem;
-    color: #464745;
-    text-transform: uppercase;
-
-    vertical-align: middle;
-    padding-left: 10px;
-
-}
 
 .navabar-padding-20{
 
@@ -155,65 +128,9 @@ body {
 
 }
 
-.navbar-default .navbar-brand {
-
-    color: #FFFFFF;
-
-    display: block;
-    line-height: 50px;
-    text-decoration: none;
-    padding: 0 10px;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    font-size: 18px;
-
-}
-
-.navbar-default .navbar-brand:hover{
-
-    color: #FFFFFF;
-
-}
-
-.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
-
-    margin-left: 0px;
-
-}
-
-.navbar-default {
-
-    border-top: #008F82 4px solid;
 
 
-}
 
-.navbar-default .navbar-nav > li > a {
-
-    font-family: "DinCondensedMedium", Helvetica, Arial, Sans-serif;
-    font-size: 1.75rem;
-    color: #F5F5F5;
-    text-transform: uppercase;
-
-}
-
-.navbar .divider-vertical {
-    height: 50px;
-    margin: 0 9px;
-    border-right: 1px solid #ffffff;
-    border-left: 1px solid #f2f2f2;
-}
-
-.navbar-inverse .divider-vertical {
-    border-right-color: #222222;
-    border-left-color: #111111;
-}
-
-@media (max-width: 767px) {
-    .navbar-collapse .nav > .divider-vertical {
-        display: none;
-    }
-}
 
 .dropdown-menu {
 
@@ -271,6 +188,7 @@ body {
 
     color: #FFFFFF;
     background: #008F82;
+    vertical-align: middle;
 
 }
 
@@ -464,7 +382,7 @@ body {
 
 .create-deal-image-detais{
 
-    height: 300px;
+    height: 350px;
     background-color: #EEEEEE;
 
 }
@@ -472,7 +390,7 @@ body {
 .create-deal-image-preview{
 
     background-color: #FFFFFF;
-    height: 300px;
+    height: 350px;
     border: 10px solid #EEEEEE;
 
 
@@ -481,6 +399,132 @@ body {
 .create-body{
 
     background-color: #FFFFFF;
+
+}
+
+.create-button{
+
+    padding: 3px;
+
+}
+
+.buttons-cancel-submit{
+
+    padding-left: 150px;
+
+}
+
+
+
+.navbar-default .navbar-nav > li > a {
+
+    color: #FFFFFF;
+
+    display: block;
+    line-height: 30px;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #F4F4F2;
+    text-transform: uppercase;
+    font-size: 14px;
+    vertical-align: middle;
+    transition: color 0.3s ease-in-out;
+
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:active {
+
+    line-height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "DinCondensedMedium", Helvetica, Arial, Sans-serif;
+    color: #464745;
+
+
+}
+
+.navbar-default .navbar-brand {
+
+    color: #FFFFFF;
+
+    display: block;
+    line-height: 30px;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 18px;
+    vertical-align: middle;
+
+}
+
+.navbar-default .navbar-brand:hover{
+
+    color: #FFFFFF;
+
+}
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+
+    margin-left: 0px;
+
+}
+
+.navbar-default {
+
+    border-top: #008F82 4px solid;
+    vertical-align: middle;
+
+
+}
+
+.navbar-default .navbar-nav > li > a {
+
+    font-family: "DinCondensedMedium", Helvetica, Arial, Sans-serif;
+    color: #F5F5F5;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 14px;
+
+}
+
+.navbar-nav > li {
+
+    line-height: 30px;
+    text-decoration: none;
+    vertical-align: middle;
+
+}
+
+.navbar .divider-vertical {
+    height: 30px;
+    margin: 0 9px;
+    border-right: 1px solid #ffffff;
+    border-left: 1px solid #f2f2f2;
+}
+
+.navbar-inverse .divider-vertical {
+    border-right-color: #222222;
+    border-left-color: #111111;
+}
+
+@media (max-width: 767px) {
+    .navbar-collapse .nav > .divider-vertical {
+        display: none;
+    }
+}
+
+.dotted-border-right{
+
+    border-right: 1px dotted #E6E6E6;
+    line-height: 30px;
+
 
 }
 
