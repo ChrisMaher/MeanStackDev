@@ -6,10 +6,20 @@ angular.module('deals').controller('DealsController', ['$scope', '$stateParams',
 		$scope.authentication = Authentication;
 
 		// Create new Deal
-		$scope.create = function() {
+		this.create = function() {
 			// Create new Deal object
 			var deal = new Deals ({
-				name: this.name
+
+				title: this.title,
+				details: this.details,
+				retailer: this.retailer,
+				price: this.price,
+				image: this.image,
+				urlimage: this.urlimage,
+				tags: this.tags,
+				startdate: this.startdate,
+				enddate: this.enddate
+
 			});
 
 			// Redirect after save
@@ -25,7 +35,7 @@ angular.module('deals').controller('DealsController', ['$scope', '$stateParams',
 
 		// Remove existing Deal
 		$scope.remove = function(deal) {
-			if ( deal ) { 
+			if ( deal ) {
 				deal.$remove();
 
 				for (var i in $scope.deals) {
@@ -58,7 +68,7 @@ angular.module('deals').controller('DealsController', ['$scope', '$stateParams',
 
 		// Find existing Deal
 		$scope.findOne = function() {
-			$scope.deal = Deals.get({ 
+			$scope.deal = Deals.get({
 				dealId: $stateParams.dealId
 			});
 		};

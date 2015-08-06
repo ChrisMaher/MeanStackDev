@@ -1,93 +1,88 @@
+<div class="col-sm-12" id="below-navbar">
+
+    <ul class="nav nav-tabs img-rounded" id="hottest-tabs">
+        <li role="presentation" class="active"><a href="#"><i class="glyphicon glyphicon-thumbs-up"></i> Hottest </a>
+        </li>
+        <li role="presentation"><a href="#"><i class="glyphicon glyphicon-arrow-up"></i> Newest </a></li>
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+               aria-expanded="false">
+                <i class="glyphicon glyphicon-star"></i> Retailers <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li role="presentation"><a href="#">LittleWoods</a></li>
+                <li role="presentation"><a href="#">Argos</a></li>
+                <li role="presentation"><a href="#">ScrewFix</a></li>
+                <li role="presentation"><a href="#">Amazon</a></li>
+                <li role="presentation"><a href="#">Penneys</a></li>
+                <li role="presentation"><a href="#">Tesco</a></li>
+                <li role="presentation"><a href="#">Lidl</a></li>
+                <li role="presentation"><a href="#">Aldi</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="nav nav-tabs " id="submit-tabs">
+        <li role="presentation"><a href="#!/deals/create"><i class="glyphicon glyphicon-plus-sign"></i> Submit </a></li>
+    </ul>
 
 
-    <div class="col-sm-12" id="below-navbar">
-
-        <ul class="nav nav-tabs img-rounded" id="hottest-tabs">
-            <li role="presentation" class="active"><a href="#"><i class="glyphicon glyphicon-thumbs-up"></i> Hottest </a></li>
-            <li role="presentation"><a href="#"><i class="glyphicon glyphicon-arrow-up"></i> Newest </a></li>
-            <li role="presentation" class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <i class="glyphicon glyphicon-star"></i> Retailers <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li role="presentation"><a href="#">LittleWoods</a></li>
-                    <li role="presentation"><a href="#">Argos</a></li>
-                    <li role="presentation"><a href="#">ScrewFix</a></li>
-                    <li role="presentation"><a href="#">Amazon</a></li>
-                    <li role="presentation"><a href="#">Penneys</a></li>
-                    <li role="presentation"><a href="#">Tesco</a></li>
-                    <li role="presentation"><a href="#">Lidl</a></li>
-                    <li role="presentation"><a href="#">Aldi</a></li>
-                </ul>
-            </li>
-        </ul>
-
-        <ul class="nav nav-tabs " id="submit-tabs">
-            <li role="presentation"><a href="#!/deals/create"><i class="glyphicon glyphicon-plus-sign"></i> Submit </a></li>
-        </ul>
-
-
-
-
-    </div>
-
+</div>
 
 
 <section data-ng-controller="HomeController">
 
 
     <section data-ng-controller="DealsController as dealsCTRL" data-ng-init="find()">
-    <div class="col-lg-9"  id="main-deals">
+        <div class="col-lg-9" id="main-deals">
 
-        <!--Deals Array Start-->
+            <!--Deals Array Start-->
 
-        <div class="col-lg-12 spotlight-deal" >
+            <div class="col-lg-12 spotlight-deal">
 
 
+            </div>
 
-        </div>
+            <!--Deals Array End-->
 
-        <!--Deals Array End-->
-
-           <!--Deals Array Start-->
+            <!--Deals Array Start-->
 
             <div class="list-group-home-deals">
 
-                <div class="spotlight-deal" >
-
+                <div class="spotlight-deal">
 
 
                 </div>
 
 
+                <a data-ng-repeat="deal in deals | limitTo:10" data-ng-href="#!/deals/{{deal._id}}"
+                   class="list-group-item">
 
-                <a data-ng-repeat="deal in deals | limitTo:10" data-ng-href="#!/deals/{{deal._id}}" class="list-group-item">
-
-                    <div class="col-lg-12 no-padding-left" >
+                    <div class="col-lg-12 no-padding-left">
 
                         <div class="col-lg-2" id="left-box">
 
                             <!--<div class="left-box-one"><h4 class="list-group-item-heading" data-ng-bind="deal.name"></h4></div>-->
 
 
-                           <div class="left-box-one">
+                            <div class="left-box-one">
 
-                               <h3 class="list-group-item-heading" data-ng-bind="deal.votes"></h3>
+                                <h3 class="list-group-item-heading" data-ng-bind="deal.votes"></h3>
 
-                           </div>
-
-
+                            </div>
 
 
                             <div class="left-box-two">
 
-                                <div class="btn-group-vertical hot-cold-buttons" role="group" aria-label="Vertical button group">
-                                    <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-arrow-up"></i></button>
-                                    <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-arrow-down"></i></button>
-                                    </div>
+                                <div class="btn-group-vertical hot-cold-buttons" role="group"
+                                     aria-label="Vertical button group">
+                                    <button type="button" class="btn btn-default"><i
+                                            class="glyphicon glyphicon-arrow-up"></i></button>
+                                    <button type="button" class="btn btn-default"><i
+                                            class="glyphicon glyphicon-arrow-down"></i></button>
+                                </div>
 
                             </div>
-
 
 
                         </div>
@@ -95,36 +90,39 @@
                         <div class="col-lg-8" id="middle-box">
 
 
-                            <div class="col-lg-12 middle-title"><h4 data-ng-bind="deal.title +' (&euro;'+  deal.price +' @ '+  deal.retailer+')'"></h4></div>
+                            <div class="col-lg-12 middle-title"><h4
+                                    data-ng-bind="deal.title +' (&euro;'+  deal.price +' @ '+  deal.retailer+')'"></h4>
+                            </div>
 
                             <div class="col-lg-12 middle-product-details"><p>{{deal.details}}</p></div>
 
                             <div class="col-lg-12 middle-post-details">
 
-                                <div class="col-lg-6 middle-posted-by">Posted By <span data-ng-bind="deal.user.displayName"></span></div>
-                                <div class="col-lg-6 middle-time-of-posting">Posted On <span data-ng-bind="deal.created | date:'mediumDate'"></span></div>
+                                <div class="col-lg-6 middle-posted-by">Posted By <span
+                                        data-ng-bind="deal.user.displayName"></span></div>
+                                <div class="col-lg-6 middle-time-of-posting">Posted On <span
+                                        data-ng-bind="deal.created | date:'mediumDate'"></span></div>
 
                             </div>
 
 
                             <!--<small class="list-group-item-text">-->
-                                <!--Posted on-->
-                                <!--<span data-ng-bind="deal.created | date:'medium'"></span>-->
-                                <!--by-->
-                                <!--<span data-ng-bind="deal.user.displayName"></span>-->
+                            <!--Posted on-->
+                            <!--<span data-ng-bind="deal.created | date:'medium'"></span>-->
+                            <!--by-->
+                            <!--<span data-ng-bind="deal.user.displayName"></span>-->
                             <!--</small>-->
 
 
                         </div>
 
-                        <div class="col-lg-2"  id="right-box">
+                        <div class="col-lg-2" id="right-box">
 
-                            <div class="col-md-12 deal-image"><img src="http://placehold.it/120x120&text=Hello world" /></div>
-                            <div class="col-md-12 deal-link link-button"> <button class="btn btn-success" >Save Me</button></div>
-
-
-
-
+                            <div class="col-md-12 deal-image"><img src="http://placehold.it/120x120&text=Hello world"/>
+                            </div>
+                            <div class="col-md-12 deal-link link-button">
+                                <button class="btn btn-success">Save Me</button>
+                            </div>
 
 
                         </div>
@@ -132,14 +130,10 @@
                     </div>
 
 
-
-
-
                 </a>
             </div>
 
-        <!--Deals Array End-->
-
+            <!--Deals Array End-->
 
 
             <div class="alert alert-warning text-center" data-ng-hide="!deals.$resolved || deals.length">
@@ -149,32 +143,21 @@
             <!--Deals Array End-->
 
 
-
-
-    </div>
+        </div>
     </section>
-    <div class="col-lg-3 right-column"  >
+    <div class="col-lg-3 right-column">
 
-        <div class="col-lg-12 right-column-inner-one" >
-
-
-
+        <div class="col-lg-12 right-column-inner-one">
 
 
         </div>
 
-        <div class="col-lg-12 right-column-inner-two" >
-
-
-
+        <div class="col-lg-12 right-column-inner-two">
 
 
         </div>
 
-        <div class="col-lg-12 right-column-inner-three" >
-
-
-
+        <div class="col-lg-12 right-column-inner-three">
 
 
         </div>
@@ -183,7 +166,7 @@
     </div>
 
 
-    <div class="col-lg-9 "  >
+    <div class="col-lg-9 ">
 
 
         <div class="text-center">
@@ -204,37 +187,35 @@
         </div>
 
 
-
-
     </div>
 
 
     <div class="col-sm-12" id="footer">
-    <div class="row">
+        <div class="row">
 
-        <div class="margin">
-        <div class="col-lg-6" ng-repeat="alert in alerts">
-            <div class="row">
-                <div class="col-xs-4">
-                    <h1 class="pull-right">
-                        <button type="button" class="btn " ng-class="alert.colour">
-                            <i class="glyphicon " ng-class="alert.icon"></i>
-                        </button>
-                    </h1>
-                </div>
-                <div class="col-xs-8">
-                    <h1>{{alert.total}}</h1>
+            <div class="margin">
+                <div class="col-lg-6" ng-repeat="alert in alerts">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <h1 class="pull-right">
+                                <button type="button" class="btn " ng-class="alert.colour">
+                                    <i class="glyphicon " ng-class="alert.icon"></i>
+                                </button>
+                            </h1>
+                        </div>
+                        <div class="col-xs-8">
+                            <h1>{{alert.total}}</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-offset-4">
+                            <span class="text-muted">{{alert.description}}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-8 col-xs-offset-4">
-                    <span class="text-muted">{{alert.description}}</span>
-                </div>
-            </div>
-        </div>
-        </div>
 
+        </div>
     </div>
-        </div>
 
 </section>
