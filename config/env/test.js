@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/starterapp-test',
+	db: 'mmongodb://mongo:mongo@ds031339.mongolab.com:31339/deals',
 	port: 3001,
 	app: {
 		title: 'starterApp - Test Environment'

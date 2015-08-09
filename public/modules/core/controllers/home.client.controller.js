@@ -2,33 +2,33 @@
 
 
 angular.module('core').controller('HomeController', ['$scope', 'Authentication',
-	function($scope, Authentication) {
-		// This provides Authentication context.
-		$scope.authentication = Authentication;
+    function ($scope, Authentication) {
+        // This provides Authentication context.
+        $scope.authentication = Authentication;
 
-		$scope.alerts = [
-
-			{
-
-			icon : 'glyphicon-euro',
-			colour: 'btn-success',
-			total: '12',
-			description: 'New Deals in 24h'
-
-			},
+        $scope.alerts = [
 
             {
 
-                icon : 'glyphicon-euro',
+                icon: 'glyphicon-euro',
                 colour: 'btn-success',
-                total: '596',
+                total: '12',
+                description: 'New Deals in 24h'
+
+            },
+
+            {
+
+                icon: 'glyphicon-euro',
+                colour: 'btn-success',
+                total: '20',
                 description: 'Total Deals'
 
             },
 
             {
 
-                icon : 'glyphicon-user',
+                icon: 'glyphicon-user',
                 colour: 'btn-default',
                 total: '56',
                 description: 'New Members in 24h'
@@ -37,7 +37,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 
             {
 
-                icon : 'glyphicon-user',
+                icon: 'glyphicon-user',
                 colour: 'btn-default',
                 total: '958',
                 description: 'Total Members'
@@ -46,7 +46,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 
             {
 
-                icon : 'glyphicon-comment',
+                icon: 'glyphicon-comment',
                 colour: 'btn-warning',
                 total: '98',
                 description: 'New Comments in 24h'
@@ -55,43 +55,45 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 
             {
 
-                icon : 'glyphicon-comment',
+                icon: 'glyphicon-comment',
                 colour: 'btn-warning',
                 total: '1,254',
                 description: 'Total Comments'
 
             },
 
-		];
-	}
+        ];
+    }
 ]);
 
 // Deals controller
 angular.module('core').controller('DealsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Deals',
-    function($scope, $stateParams, $location, Authentication, Deals) {
+    function ($scope, $stateParams, $location, Authentication, Deals) {
         $scope.authentication = Authentication;
 
+        $scope.dealsCount = Deals.length();
+
         // Create new Deal
-        $scope.create = function() {
+        $scope.create = function () {
             // Create new Deal object
-            var deal = new Deals ({
+            var deal = new Deals({
                 name: this.name
             });
 
             // Redirect after save
-            deal.$save(function(response) {
+            deal.$save(function (response) {
                 $location.path('deals/' + response._id);
 
                 // Clear form fields
                 $scope.name = '';
-            }, function(errorResponse) {
+            }, function (errorResponse) {
                 $scope.error = errorResponse.data.message;
             });
         };
 
         // Remove existing Deal
-        $scope.remove = function(deal) {
-            if ( deal ) {
+        $scope.remove = function (deal) {
+            if (deal) {
                 deal.$remove();
 
                 for (var i in $scope.deals) {
@@ -100,33 +102,44 @@ angular.module('core').controller('DealsController', ['$scope', '$stateParams', 
                     }
                 }
             } else {
-                $scope.deal.$remove(function() {
+                $scope.deal.$remove(function () {
                     $location.path('deals');
                 });
             }
         };
 
         // Update existing Deal
-        $scope.update = function() {
+        $scope.update = function () {
             var deal = $scope.deal;
 
-            deal.$update(function() {
+            deal.$update(function () {
                 $location.path('deals/' + deal._id);
-            }, function(errorResponse) {
+            }, function (errorResponse) {
                 $scope.error = errorResponse.data.message;
             });
         };
 
         // Find a list of Deals
-        $scope.find = function() {
+        $scope.find = function () {
             $scope.deals = Deals.query();
         };
 
         // Find existing Deal
-        $scope.findOne = function() {
+        $scope.findOne = function () {
             $scope.deal = Deals.get({
                 dealId: $stateParams.dealId
             });
+        };
+
+        // Fill Stats
+        $scope.fillStats = function () {
+
+
+            $scope.deal = Deals.get({
+                dealId: $stateParams.dealId
+            });
+
+
         };
     }
 ]);

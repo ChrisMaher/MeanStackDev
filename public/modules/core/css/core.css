@@ -37,6 +37,15 @@ body {
     border-top: #eeeeee 20px solid;
     border-bottom: #eeeeee 20px solid;
     color: #FFFFFF;
+    height: 350px;
+
+}
+
+.stats-box{
+
+    height: 95px;
+
+
 
 }
 
@@ -290,10 +299,21 @@ body {
 
 .middle-product-details{
 
-    height: 100px;
+    height: 96px;
     display: block;
     word-wrap: break-word;
     -moz-hyphens: auto;
+
+
+}
+.middle-post-details{
+
+    height:34px;
+    display: block;
+    word-wrap: break-word;
+    -moz-hyphens: auto;
+    margin-top: 10px;
+
 
 }
 
@@ -522,8 +542,8 @@ body {
 
 .dotted-border-right{
 
-    border-right: 1px dotted #E6E6E6;
-    line-height: 30px;
+    /*border-right: 1px dotted #E6E6E6;*/
+    /*line-height: 30px;*/
 
 
 }
@@ -732,6 +752,18 @@ body {
     display: block;
 
 }
+
+.home-short-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;     /* fallback */
+    max-height: 96px;      /* fallback */
+    -webkit-line-clamp: 6; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+
 
 
 

@@ -40,6 +40,8 @@
 
             <div class="col-lg-12 spotlight-deal">
 
+                <h1>{{dealsCount}}</h1>
+
 
             </div>
 
@@ -55,8 +57,8 @@
                 </div>
 
 
-                <a data-ng-repeat="deal in deals | limitTo:10" data-ng-href="#!/deals/{{deal._id}}"
-                   class="list-group-item">
+                <div data-ng-repeat="deal in deals | limitTo:10"
+                     class="list-group-item">
 
                     <div class="col-lg-12 no-padding-left">
 
@@ -94,7 +96,7 @@
                                     data-ng-bind="deal.title +' (&euro;'+  deal.price +' @ '+  deal.retailer+')'"></h4>
                             </div>
 
-                            <div class="col-lg-12 middle-product-details"><p>{{deal.details}}</p></div>
+                            <div class="col-lg-12 middle-product-details home-short-text"><p>{{deal.details}}</p></div>
 
                             <div class="col-lg-12 middle-post-details">
 
@@ -120,9 +122,9 @@
 
                             <div class="col-md-12 deal-image"><img src="http://placehold.it/120x120&text=Hello world"/>
                             </div>
-                            <div class="col-md-12 deal-link link-button">
+                            <a data-ng-href="#!/deals/{{deal._id}}" class="col-md-12 deal-link link-button">
                                 <button class="btn btn-success">Save Me</button>
-                            </div>
+                            </a>
 
 
                         </div>
@@ -130,7 +132,7 @@
                     </div>
 
 
-                </a>
+                </div>
             </div>
 
             <!--Deals Array End-->
@@ -191,31 +193,164 @@
 
 
     <div class="col-sm-12" id="footer">
-        <div class="row">
 
-            <div class="margin">
-                <div class="col-lg-6" ng-repeat="alert in alerts">
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <h1 class="pull-right">
-                                <button type="button" class="btn " ng-class="alert.colour">
-                                    <i class="glyphicon " ng-class="alert.icon"></i>
-                                </button>
-                            </h1>
-                        </div>
-                        <div class="col-xs-8">
-                            <h1>{{alert.total}}</h1>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-8 col-xs-offset-4">
-                            <span class="text-muted">{{alert.description}}</span>
-                        </div>
-                    </div>
+
+        <!--<div class="row">-->
+
+
+        <div class="col-lg-6 stats-box">
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <h1 class="pull-right">
+                        <button type="button" class="btn btn-success" ng-class="alert.colour">
+                            <i class="glyphicon glyphicon-euro" style="color:black" ng-class="alert.icon"></i>
+                        </button>
+                    </h1>
+                </div>
+                <div class="col-xs-8">
+                    <h1>34</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-4">
+                    <span class="text-muted">Deals Today</span>
                 </div>
             </div>
 
         </div>
+        <div class="col-lg-6 stats-box">
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <h1 class="pull-right">
+                        <button type="button" class="btn btn-success" ng-class="alert.colour">
+                            <i class="glyphicon  glyphicon-euro" style="color:black" ng-class="alert.icon"></i>
+                        </button>
+                    </h1>
+                </div>
+                <div class="col-xs-8">
+                    <h1>34</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-4">
+                    <span class="text-muted">Total Deals</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-6 stats-box">
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <h1 class="pull-right">
+                        <button type="button" class="btn btn-white" ng-class="alert.colour">
+                            <i class="glyphicon glyphicon-user" style="color:black" ng-class="alert.icon"></i>
+                        </button>
+                    </h1>
+                </div>
+                <div class="col-xs-8">
+                    <h1>34</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-4">
+                    <span class="text-muted">Users Joined Today</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-6 stats-box">
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <h1 class="pull-right">
+                        <button type="button" class="btn btn-white" ng-class="alert.colour">
+                            <i class="glyphicon glyphicon-user" style="color:black" ng-class="alert.icon"></i>
+                        </button>
+                    </h1>
+                </div>
+                <div class="col-xs-8">
+                    <h1>34</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-4">
+                    <span class="text-muted">Total Users</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-6 stats-box">
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <h1 class="pull-right">
+                        <button type="button" class="btn btn-warning" ng-class="alert.colour">
+                            <i class="glyphicon glyphicon-comment" style="color:black" ng-class="alert.icon"></i>
+                        </button>
+                    </h1>
+                </div>
+                <div class="col-xs-8">
+                    <h1>34</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-4">
+                    <span class="text-muted">Comments Today</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-6 stats-box">
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <h1 class="pull-right">
+                        <button type="button" class="btn btn-warning" ng-class="alert.colour">
+                            <i class="glyphicon glyphicon-comment" style="color:black" ng-class="alert.icon"></i>
+                        </button>
+                    </h1>
+                </div>
+                <div class="col-xs-8">
+                    <h1>34</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-4">
+                    <span class="text-muted">Total Comments</span>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <!--<div class="margin">-->
+            <!--<div class="col-lg-6" ng-repeat="alert in alerts">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-xs-4">-->
+                        <!--<h1 class="pull-right">-->
+                            <!--<button type="button" class="btn " ng-class="alert.colour">-->
+                                <!--<i class="glyphicon " ng-class="alert.icon"></i>-->
+                            <!--</button>-->
+                        <!--</h1>-->
+                    <!--</div>-->
+                    <!--<div class="col-xs-8">-->
+                        <!--<h1>{{alert.total}}</h1>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="row">-->
+                    <!--<div class="col-xs-8 col-xs-offset-4">-->
+                        <!--<span class="text-muted">{{alert.description}}</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--</div>-->
     </div>
 
 </section>
