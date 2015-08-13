@@ -522,11 +522,17 @@ body {
 
 }
 
-.navbar .divider-vertical {
-    height: 30px;
-    margin: 0 9px;
-    border-right: 1px solid #ffffff;
-    border-left: 1px solid #f2f2f2;
+/*.navbar .divider-vertical {*/
+    /*height: 30px;*/
+    /*margin: 0 9px;*/
+    /*border-right: 1px solid #ffffff;*/
+    /*border-left: 1px solid #f2f2f2;*/
+/*}*/
+
+.navbar-right{
+
+    padding-right: 20px;
+
 }
 
 .navbar-inverse .divider-vertical {
@@ -763,7 +769,43 @@ body {
     -webkit-box-orient: vertical;
 }
 
+.comments-box-under-deal{
 
+    padding: 10px;
+
+}
+
+/*Comments*/
+
+.comment-box-single{
+
+    height: 150px;
+
+}
+
+.comment-box-left{
+
+
+}
+.comment-box-right{
+
+
+}
+.comment-box-middle{
+
+
+}
+.comment-box-middle-top{
+
+  height: 120px;
+
+}
+.comment-box-middle-bottom{
+
+
+}
+
+/*Comments*/
 
 
 

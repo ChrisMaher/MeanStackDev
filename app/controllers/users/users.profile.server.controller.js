@@ -48,6 +48,50 @@ exports.update = function(req, res) {
 	}
 };
 
+
+/**
+ * Count of Users
+ */
+exports.countUsers = function (req, res) {
+    User.count({},
+
+        function (err, usersCount) {
+            if (err) {
+                return res.status(400).send({
+                    message: errorHandler.getErrorMessage(err)
+                });
+            } else {
+                var data = {};
+                data.count =  usersCount;
+                res.jsonp(data);
+            }
+        });
+};
+
+/**
+ * Count of Users Today
+ */
+exports.countUsersToday = function (req, res) {
+    User.count({
+
+            $where: function ()
+            { return Date.now() - this._id.getTimestamp() < (24 * 60 * 60 * 1000);  }
+
+        },
+
+        function (err, usersCount) {
+            if (err) {
+                return res.status(400).send({
+                    message: errorHandler.getErrorMessage(err)
+                });
+            } else {
+                var data = {};
+                data.count =  usersCount;
+                res.jsonp(data);
+            }
+        });
+};
+
 /**
  * Send User
  */

@@ -9,6 +9,12 @@ module.exports = function(app) {
 	// User Routes
 	var users = require('../../app/controllers/users.server.controller');
 
+	app.route('/users/userCount').all()
+		.get(users.countUsers);
+
+	app.route('/users/userCountToday').all()
+		.get(users.countUsersToday);
+
 	// Setting up the users profile api
 	app.route('/users/me').get(users.me);
 	app.route('/users').put(users.update);

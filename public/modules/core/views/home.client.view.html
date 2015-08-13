@@ -1,3 +1,15 @@
+<!--
+
+TODO
+
+Comments - Modify Deals Mongoose and Upsert comments
+Spotlight Box
+
+
+-->
+
+
+
 <div class="col-sm-12" id="below-navbar">
 
     <ul class="nav nav-tabs img-rounded" id="hottest-tabs">
@@ -34,6 +46,7 @@
 
 
     <section data-ng-controller="DealsController as dealsCTRL" data-ng-init="find()">
+
         <div class="col-lg-9" id="main-deals">
 
             <!--Deals Array Start-->
@@ -78,10 +91,16 @@
 
                                 <div class="btn-group-vertical hot-cold-buttons" role="group"
                                      aria-label="Vertical button group">
-                                    <button type="button" class="btn btn-default"><i
+
+
+                                    <button type="button" ng-click="voteUp(deal._id)" class="btn btn-default"><i
                                             class="glyphicon glyphicon-arrow-up"></i></button>
-                                    <button type="button" class="btn btn-default"><i
+
+
+                                    <button type="button" ng-click="voteDown(deal._id)" class="btn btn-default"><i
                                             class="glyphicon glyphicon-arrow-down"></i></button>
+
+
                                 </div>
 
                             </div>
@@ -146,7 +165,7 @@
 
 
         </div>
-    </section>
+
     <div class="col-lg-3 right-column">
 
         <div class="col-lg-12 right-column-inner-one">
@@ -209,7 +228,7 @@
                     </h1>
                 </div>
                 <div class="col-xs-8">
-                    <h1>34</h1>
+                    <h1>{{numOfDealsToday.count}}</h1>
                 </div>
             </div>
             <div class="row">
@@ -230,7 +249,7 @@
                     </h1>
                 </div>
                 <div class="col-xs-8">
-                    <h1>34</h1>
+                    <h1>{{numOfDeals.count}}</h1>
                 </div>
             </div>
             <div class="row">
@@ -240,6 +259,9 @@
             </div>
 
         </div>
+
+        <section data-ng-controller="SettingsController">
+
         <div class="col-lg-6 stats-box">
 
             <div class="row">
@@ -251,7 +273,7 @@
                     </h1>
                 </div>
                 <div class="col-xs-8">
-                    <h1>34</h1>
+                    <h1>{{numOfUsersToday.count}}</h1>
                 </div>
             </div>
             <div class="row">
@@ -272,7 +294,7 @@
                     </h1>
                 </div>
                 <div class="col-xs-8">
-                    <h1>34</h1>
+                    <h1>{{numOfUsers.count}}</h1>
                 </div>
             </div>
             <div class="row">
@@ -282,6 +304,11 @@
             </div>
 
         </div>
+        </section>
+
+        <section data-ng-controller="CommentsController" data-ng-init="find()">
+
+
         <div class="col-lg-6 stats-box">
 
             <div class="row">
@@ -293,7 +320,7 @@
                     </h1>
                 </div>
                 <div class="col-xs-8">
-                    <h1>34</h1>
+                    <h1>{{numOfCommentsToday.count}}</h1>
                 </div>
             </div>
             <div class="row">
@@ -314,7 +341,7 @@
                     </h1>
                 </div>
                 <div class="col-xs-8">
-                    <h1>34</h1>
+                    <h1>{{numOfComments.count}}</h1>
                 </div>
             </div>
             <div class="row">
@@ -325,32 +352,12 @@
 
         </div>
 
+        </section>
 
 
 
-        <!--<div class="margin">-->
-            <!--<div class="col-lg-6" ng-repeat="alert in alerts">-->
-                <!--<div class="row">-->
-                    <!--<div class="col-xs-4">-->
-                        <!--<h1 class="pull-right">-->
-                            <!--<button type="button" class="btn " ng-class="alert.colour">-->
-                                <!--<i class="glyphicon " ng-class="alert.icon"></i>-->
-                            <!--</button>-->
-                        <!--</h1>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-8">-->
-                        <!--<h1>{{alert.total}}</h1>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="row">-->
-                    <!--<div class="col-xs-8 col-xs-offset-4">-->
-                        <!--<span class="text-muted">{{alert.description}}</span>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--</div>-->
     </div>
+
+    </section>
 
 </section>
