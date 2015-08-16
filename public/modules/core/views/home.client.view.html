@@ -15,7 +15,9 @@ Spotlight Box
     <ul class="nav nav-tabs img-rounded" id="hottest-tabs">
         <li role="presentation" class="active"><a href="#"><i class="glyphicon glyphicon-thumbs-up"></i> Hottest </a>
         </li>
+
         <li role="presentation"><a href="#"><i class="glyphicon glyphicon-arrow-up"></i> Newest </a></li>
+
         <li role="presentation" class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                aria-expanded="false">
@@ -32,9 +34,15 @@ Spotlight Box
                 <li role="presentation"><a href="#">Aldi</a></li>
             </ul>
         </li>
+
+
+
     </ul>
 
+
+
     <ul class="nav nav-tabs " id="submit-tabs">
+        <!--<li role="presentation"><input type="text" ng-model="search" class="form-control" placeholder="Search"></li>-->
         <li role="presentation"><a href="#!/deals/create"><i class="glyphicon glyphicon-plus-sign"></i> Submit </a></li>
     </ul>
 
@@ -70,8 +78,7 @@ Spotlight Box
                 </div>
 
 
-                <div data-ng-repeat="deal in deals | limitTo:10"
-                     class="list-group-item">
+                <div dir-paginate="deal in deals|filter:search|itemsPerPage:10" class="list-group-item">
 
                     <div class="col-lg-12 no-padding-left">
 
@@ -187,176 +194,18 @@ Spotlight Box
     </div>
 
 
-    <div class="col-lg-9 ">
+        <div class="col-lg-9 ">
 
 
-        <div class="text-center">
-            <ul class="pagination">
-                <li class="disabled"><a href="#">&laquo;</a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">6</a></li>
-                <li><a href="#">7</a></li>
-                <li><a href="#">8</a></li>
-                <li><a href="#">9</a></li>
-                <li><a href="#">10</a></li>
-                <li><a href="#">&raquo;</a></li>
-            </ul>
+            <div class="text-center">
+                <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>
+            </div>
+
+
         </div>
 
 
-    </div>
 
-
-    <div class="col-sm-12" id="footer">
-
-
-        <!--<div class="row">-->
-
-
-        <div class="col-lg-6 stats-box">
-
-            <div class="row">
-                <div class="col-xs-4">
-                    <h1 class="pull-right">
-                        <button type="button" class="btn btn-success" ng-class="alert.colour">
-                            <i class="glyphicon glyphicon-euro" style="color:black" ng-class="alert.icon"></i>
-                        </button>
-                    </h1>
-                </div>
-                <div class="col-xs-8">
-                    <h1>{{numOfDealsToday.count}}</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-8 col-xs-offset-4">
-                    <span class="text-muted">Deals Today</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-lg-6 stats-box">
-
-            <div class="row">
-                <div class="col-xs-4">
-                    <h1 class="pull-right">
-                        <button type="button" class="btn btn-success" ng-class="alert.colour">
-                            <i class="glyphicon  glyphicon-euro" style="color:black" ng-class="alert.icon"></i>
-                        </button>
-                    </h1>
-                </div>
-                <div class="col-xs-8">
-                    <h1>{{numOfDeals.count}}</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-8 col-xs-offset-4">
-                    <span class="text-muted">Total Deals</span>
-                </div>
-            </div>
-
-        </div>
-
-        <section data-ng-controller="SettingsController">
-
-        <div class="col-lg-6 stats-box">
-
-            <div class="row">
-                <div class="col-xs-4">
-                    <h1 class="pull-right">
-                        <button type="button" class="btn btn-white" ng-class="alert.colour">
-                            <i class="glyphicon glyphicon-user" style="color:black" ng-class="alert.icon"></i>
-                        </button>
-                    </h1>
-                </div>
-                <div class="col-xs-8">
-                    <h1>{{numOfUsersToday.count}}</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-8 col-xs-offset-4">
-                    <span class="text-muted">Users Joined Today</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-lg-6 stats-box">
-
-            <div class="row">
-                <div class="col-xs-4">
-                    <h1 class="pull-right">
-                        <button type="button" class="btn btn-white" ng-class="alert.colour">
-                            <i class="glyphicon glyphicon-user" style="color:black" ng-class="alert.icon"></i>
-                        </button>
-                    </h1>
-                </div>
-                <div class="col-xs-8">
-                    <h1>{{numOfUsers.count}}</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-8 col-xs-offset-4">
-                    <span class="text-muted">Total Users</span>
-                </div>
-            </div>
-
-        </div>
-        </section>
-
-        <section data-ng-controller="CommentsController" data-ng-init="find()">
-
-
-        <div class="col-lg-6 stats-box">
-
-            <div class="row">
-                <div class="col-xs-4">
-                    <h1 class="pull-right">
-                        <button type="button" class="btn btn-warning" ng-class="alert.colour">
-                            <i class="glyphicon glyphicon-comment" style="color:black" ng-class="alert.icon"></i>
-                        </button>
-                    </h1>
-                </div>
-                <div class="col-xs-8">
-                    <h1>{{numOfCommentsToday.count}}</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-8 col-xs-offset-4">
-                    <span class="text-muted">Comments Today</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-lg-6 stats-box">
-
-            <div class="row">
-                <div class="col-xs-4">
-                    <h1 class="pull-right">
-                        <button type="button" class="btn btn-warning" ng-class="alert.colour">
-                            <i class="glyphicon glyphicon-comment" style="color:black" ng-class="alert.icon"></i>
-                        </button>
-                    </h1>
-                </div>
-                <div class="col-xs-8">
-                    <h1>{{numOfComments.count}}</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-8 col-xs-offset-4">
-                    <span class="text-muted">Total Comments</span>
-                </div>
-            </div>
-
-        </div>
-
-        </section>
-
-
-
-    </div>
 
     </section>
 
