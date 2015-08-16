@@ -30,14 +30,23 @@ body {
 	background-color: #eeeeee;
 }
 
-#footer{
+.footer{
 
     padding: 20px;
     background-color: #464745;
-    border-top: #eeeeee 20px solid;
-    border-bottom: #eeeeee 20px solid;
+    /*border-top: #eeeeee 20px solid;*/
+    /*border-bottom: #eeeeee 20px solid;*/
     color: #FFFFFF;
     height: 350px;
+    width: 1140px;
+    margin: 0px auto;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
 
 }
 
@@ -59,7 +68,7 @@ body {
 
 }
 
-#main-deals{
+.main-deals{
 
     height: 2300px;
     /*border: #000000 1px solid;*/
@@ -68,6 +77,12 @@ body {
     border-top: #dddddd 1px solid;
     border-bottom: #dddddd 1px solid;
     border-left: #dddddd 1px solid;
+
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-topleft: 10px;
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 
 }
 .right-column{
@@ -79,6 +94,13 @@ body {
     border-bottom: #dddddd 1px solid;
     border-right: #dddddd 1px solid;
     border-right: 1px solid #DDDDDD;
+
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-topright: 10px;
+
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
 
 }
 
@@ -232,18 +254,33 @@ body {
     border-right: 1px solid #DDDDDD;
 
 }
-#middle-box{
+.middle-box{
 
     /*padding: 5px;*/
     height: 180px;
+    padding: 0 !important;
+    margin: 0 !important;
 
 }
 
-#right-box{
+.right-box{
 
     /*padding: 5px;*/
     height: 180px;
     border-left: 1px solid #DDDDDD;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+}
+
+.deal-votes > h1{
+
+    height: 90px;
+    width: 120px;
+    text-align: center;
+    line-height: 90px;
+    vertical-align: middle;
 
 }
 
@@ -419,6 +456,23 @@ body {
 .create-body{
 
     background-color: #FFFFFF;
+
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-topleft: 10px;
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-topright: 10px;
+
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    border-top: #dddddd 1px solid;
+    border-bottom: #dddddd 1px solid;
+    border-left: #dddddd 1px solid;
+    border-right: #dddddd 1px solid;
 
 }
 
@@ -782,6 +836,12 @@ body {
     min-height: 100px;
     margin: 10px;
 
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-topright: 5px;
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
 }
 
 .comment-box-left{
@@ -803,6 +863,25 @@ body {
 }
 .comment-box-middle-bottom{
 
+
+}
+
+.pagination{
+
+    margin: 0px;
+
+    
+}
+
+.vote-up-button{
+
+    margin-bottom: 5px;
+
+}
+
+.vote-down-button{
+
+    margin-top: 5px;
 
 }
 

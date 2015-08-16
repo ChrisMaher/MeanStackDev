@@ -9,7 +9,6 @@ Spotlight Box
 -->
 
 
-
 <div class="col-sm-12" id="below-navbar">
 
     <ul class="nav nav-tabs img-rounded" id="hottest-tabs">
@@ -36,9 +35,7 @@ Spotlight Box
         </li>
 
 
-
     </ul>
-
 
 
     <ul class="nav nav-tabs " id="submit-tabs">
@@ -55,7 +52,7 @@ Spotlight Box
 
     <section data-ng-controller="DealsController as dealsCTRL" data-ng-init="find()">
 
-        <div class="col-lg-9" id="main-deals">
+        <div class="col-lg-9 main-deals">
 
             <!--Deals Array Start-->
 
@@ -77,45 +74,28 @@ Spotlight Box
 
                 </div>
 
+                <!-------      START OF DEAL LIST      -------->
 
                 <div dir-paginate="deal in deals|filter:search|itemsPerPage:10" class="list-group-item">
 
                     <div class="col-lg-12 no-padding-left">
 
-                        <div class="col-lg-2" id="left-box">
+                        <div class="col-lg-2 right-box">
 
-                            <!--<div class="left-box-one"><h4 class="list-group-item-heading" data-ng-bind="deal.name"></h4></div>-->
+                            <div class="col-md-12 deal-votes">
 
-
-                            <div class="left-box-one">
-
-                                <h3 class="list-group-item-heading" data-ng-bind="deal.votes"></h3>
+                                <h1>{{deal.votes}}</h1>
 
                             </div>
 
-
-                            <div class="left-box-two">
-
-                                <div class="btn-group-vertical hot-cold-buttons" role="group"
-                                     aria-label="Vertical button group">
-
-
-                                    <button type="button" ng-click="voteUp(deal._id)" class="btn btn-default"><i
-                                            class="glyphicon glyphicon-arrow-up"></i></button>
-
-
-                                    <button type="button" ng-click="voteDown(deal._id)" class="btn btn-default"><i
-                                            class="glyphicon glyphicon-arrow-down"></i></button>
-
-
-                                </div>
-
+                            <div class="col-md-12 deal-link link-button">
+                                <button class="btn btn-default "><i class="glyphicon glyphicon-thumbs-up"></i> Like</button>
                             </div>
 
 
                         </div>
 
-                        <div class="col-lg-8" id="middle-box">
+                        <div class="col-lg-8 middle-box">
 
 
                             <div class="col-lg-12 middle-title"><h4
@@ -146,8 +126,12 @@ Spotlight Box
 
                         <div class="col-lg-2" id="right-box">
 
-                            <div class="col-md-12 deal-image"><img src="http://placehold.it/120x120&text=Hello world"/>
+                            <div class="col-md-12 deal-image">
+
+                                <img src="http://placehold.it/120x120&text=Hello world"/>
+
                             </div>
+
                             <a data-ng-href="#!/deals/{{deal._id}}" class="col-md-12 deal-link link-button">
                                 <button class="btn btn-success">Save Me</button>
                             </a>
@@ -159,6 +143,11 @@ Spotlight Box
 
 
                 </div>
+
+
+                <!-------      END OF DEAL LIST      -------->
+
+
             </div>
 
             <!--Deals Array End-->
@@ -173,38 +162,37 @@ Spotlight Box
 
         </div>
 
-    <div class="col-lg-3 right-column">
+        <div class="col-lg-3 right-column">
 
-        <div class="col-lg-12 right-column-inner-one">
-
-
-        </div>
-
-        <div class="col-lg-12 right-column-inner-two">
+            <div class="col-lg-12 right-column-inner-one">
 
 
-        </div>
+            </div>
 
-        <div class="col-lg-12 right-column-inner-three">
-
-
-        </div>
+            <div class="col-lg-12 right-column-inner-two">
 
 
-    </div>
+            </div>
+
+            <div class="col-lg-12 right-column-inner-three">
 
 
-        <div class="col-lg-9 ">
-
-
-            <div class="text-center">
-                <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>
             </div>
 
 
         </div>
 
 
+        <div class="col-lg-9 ">
+
+
+            <div class="text-center">
+                <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"
+                                         template-url="dirPagination.tpl.html"></dir-pagination-controls>
+            </div>
+
+
+        </div>
 
 
     </section>
