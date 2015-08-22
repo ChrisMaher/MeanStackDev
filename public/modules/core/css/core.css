@@ -276,10 +276,10 @@ body {
 
 .deal-votes > h1{
 
-    height: 90px;
+    height: 50px;
     width: 120px;
     text-align: center;
-    line-height: 90px;
+    line-height: 50px;
     vertical-align: middle;
 
 }
@@ -623,6 +623,15 @@ body {
 
 }
 
+.link-button-home{
+
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 10px;
+    margin-left: 10px;
+
+}
+
 #deal-main-view{
 
     height: 600px;
@@ -882,6 +891,13 @@ body {
 .vote-down-button{
 
     margin-top: 5px;
+
+}
+
+.username{
+
+    color: #0000ee;
+    font-weight: bold;
 
 }
 
