@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://chrismaher:password99@ds041581.mongolab.com:41581/heroku_xv33xgs4',
 	app: {
 		title: 'MeanApp - Development Environment'
 	},

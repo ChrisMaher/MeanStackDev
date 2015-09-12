@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://chrismaher:password99@ds041581.mongolab.com:41581/heroku_xv33xgs4',
+	db: 'mongodb://chris:password@ds033828.mongolab.com:33828/heroku_zcrvg36j',
 	port: 3001,
 	app: {
 		title: 'starterApp - Test Environment'
