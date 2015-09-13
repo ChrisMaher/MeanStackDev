@@ -6,8 +6,8 @@ module.exports = {
 		title: 'MeanApp - Development Environment'
 	},
 	facebook: {
-		clientID: process.env.FACEBOOK_ID || 'APP_ID',
-		clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
+		clientID: process.env.FACEBOOK_ID || '100240200318144',
+		clientSecret: process.env.FACEBOOK_SECRET || 'ae7c8731d6944df9dc234a35a56f1f9c',
 		callbackURL: '/auth/facebook/callback'
 	},
 	twitter: {
@@ -16,8 +16,8 @@ module.exports = {
 		callbackURL: '/auth/twitter/callback'
 	},
 	google: {
-		clientID: process.env.GOOGLE_ID || 'APP_ID',
-		clientSecret: process.env.GOOGLE_SECRET || 'APP_SECRET',
+		clientID: process.env.GOOGLE_ID || '291598201748-7n9e527blim3si6jdqsmopreebbd2j3b.apps.googleusercontent.com',
+		clientSecret: process.env.GOOGLE_SECRET || 'c5CHGDaphJ6ZB6xNtY7MTZzO',
 		callbackURL: '/auth/google/callback'
 	},
 	linkedin: {
