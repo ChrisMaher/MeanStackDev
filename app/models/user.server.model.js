@@ -148,4 +148,22 @@ UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
 	});
 };
 
+UserSchema.methods.setProfilePicture = function () {
+	if (this.provider !== 'local' && this.picture !== '') {
+		switch (this.provider) {
+			case 'facebook':
+				this.picture = 'https:graph.facebook.com/' + this.providerData.username + '/picture?type=large';
+				break;
+
+			case 'google':
+				this.picture = this.providerData.picture;
+				break;
+
+			case 'linkedin':
+				this.picture = this.providerData.pictureUrl;
+				break;
+		}
+	}
+};
+
 mongoose.model('User', UserSchema);
