@@ -54,11 +54,11 @@ var UserSchema = new Schema({
 		required: 'Please fill in a username',
 		trim: true
 	},
-	//county: {
-	//	type: String,
-	//	unique: 'testing error message',
-	//	trim: true
-	//},
+	county: {
+		type: String,
+		trim: true,
+		default: 'NA'
+	},
 	password: {
 		type: String,
 		default: '',
