@@ -1,0 +1,19 @@
+<section data-ng-controller="CouponsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Coupons</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="coupon in coupons" data-ng-href="#!/coupons/{{coupon._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="coupon.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="coupon.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="coupon.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!coupons.$resolved || coupons.length">
+    	No Coupons yet, why don't you <a href="/#!/coupons/create">create one</a>?
+    </div>
+</section>
