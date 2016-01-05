@@ -8,29 +8,35 @@ Spotlight Box
 
 -->
 
+<section data-ng-controller="HomeController">
 
 <div class="col-sm-12" id="below-navbar">
 
     <ul class="nav nav-tabs img-rounded" id="hottest-tabs">
-        <li role="presentation" class="active"><a href="#"><i class="glyphicon glyphicon-thumbs-up"></i> Hottest </a>
+        <li role="presentation" class="active"><a href="#"
+                                                  ng-click="orderByField='votes'; reverseSort = !reverseSort"><i
+                class="glyphicon glyphicon-thumbs-up"></i> Hottest </a>
         </li>
 
-        <li role="presentation"><a href="#"><i class="glyphicon glyphicon-arrow-up"></i> Newest </a></li>
+        <li role="presentation"><a href="#" ng-click="orderByField='created'; reverseSort = !reverseSort"><i
+                class="glyphicon glyphicon-arrow-up"></i> Newest </a></li>
 
         <li role="presentation" class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                aria-expanded="false">
                 <i class="glyphicon glyphicon-star"></i> Retailers <span class="caret"></span>
+
             </a>
             <ul class="dropdown-menu">
-                <li role="presentation"><a href="#">LittleWoods</a></li>
-                <li role="presentation"><a href="#">Argos</a></li>
-                <li role="presentation"><a href="#">ScrewFix</a></li>
-                <li role="presentation"><a href="#">Amazon</a></li>
-                <li role="presentation"><a href="#">Penneys</a></li>
-                <li role="presentation"><a href="#">Tesco</a></li>
-                <li role="presentation"><a href="#">Lidl</a></li>
-                <li role="presentation"><a href="#">Aldi</a></li>
+                <li role="presentation"><a href="#" ng-click="filterBy=''">All</a></li>
+                <li role="presentation"><a href="#" ng-click="filterBy='Littlewoods'">LittleWoods</a></li>
+                <li role="presentation"><a href="#" ng-click="filterBy='Argos'">Argos</a></li>
+                <li role="presentation"><a href="#" ng-click="filterBy='ScrewFix'">ScrewFix</a></li>
+                <li role="presentation"><a href="#" ng-click="filterBy='Amazon'">Amazon</a></li>
+                <li role="presentation"><a href="#" ng-click="filterBy='Penneys'">Penneys</a></li>
+                <li role="presentation"><a href="#" ng-click="filterBy='Tesco'">Tesco</a></li>
+                <li role="presentation"><a href="#" ng-click="filterBy='Lidl'">Lidl</a></li>
+                <li role="presentation"><a href="#" ng-click="filterBy='Aldi'">Aldi</a></li>
             </ul>
         </li>
 
@@ -47,7 +53,7 @@ Spotlight Box
 </div>
 
 
-<section data-ng-controller="HomeController">
+
 
 
     <section data-ng-controller="DealsController as dealsCTRL" data-ng-init="find()">
@@ -68,13 +74,14 @@ Spotlight Box
 
                 <!-------      START OF DEAL LIST      -------->
 
-                <div dir-paginate="deal in deals|filter:search|itemsPerPage:10" class="list-group-item">
+                <div dir-paginate="deal in deals|orderBy:orderByField:reverseSort|filter:{retailer:filterBy}|itemsPerPage:10"
+                     class="list-group-item">
 
                     <div class="col-lg-12 no-padding-left">
 
                         <div class="col-lg-2 right-box">
 
-                            <div class="col-md-12 deal-votes">
+                            <div data-ng-href="#!/deals/{{deal._id}}" class="col-md-12 deal-votes">
 
                                 <h1>{{deal.votes}}</h1>
 
@@ -105,8 +112,13 @@ Spotlight Box
                         <div class="col-lg-8 middle-box">
 
 
-                            <div class="col-lg-12 middle-title"><h4
-                                    data-ng-bind="deal.title +' (&euro;'+  deal.price +' @ '+  deal.retailer+')'"></h4>
+                            <div class="col-lg-12 middle-title">
+
+                                <!--<h4 href="#!/deals/{{deal._id}}" ng-bind="deal.title +' (&euro;'+  deal.price +' @ '+  deal.retailer+')'"></h4>-->
+                                <h4><a ng-href="#!/deals/{{deal._id}}"
+                                       ng-bind="deal.title +' (&euro;'+  deal.price +' @ '+  deal.retailer+')'"></a>
+                                </h4>
+
                             </div>
 
                             <div class="col-lg-12 middle-product-details home-short-text"><p>{{deal.details}}</p></div>

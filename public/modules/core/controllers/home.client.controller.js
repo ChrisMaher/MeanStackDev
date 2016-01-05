@@ -75,6 +75,10 @@ angular.module('core').controller('DealsController', ['$scope', '$stateParams', 
 
         $scope.dealsCount = Deals.length();
 
+        $scope.orderByField = 'votes';
+        $scope.reverseSort = false;
+        $scope.filterBy = '';
+
         // Create new Deal
         $scope.create = function () {
             // Create new Deal object

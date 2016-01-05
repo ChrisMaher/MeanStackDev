@@ -3,7 +3,7 @@
 module.exports = {
 	db: 'mongodb://mongo:mongo@ds031339.mongolab.com:31339/deals',
 	app: {
-		title: 'MeanApp - Development Environment'
+		title: 'SaveMe.ie - Irish Money Saving Community'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || '100240200318144',

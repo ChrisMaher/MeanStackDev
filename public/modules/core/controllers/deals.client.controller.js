@@ -5,10 +5,12 @@ angular.module('deals').controller('DealsController', ['$scope', '$stateParams',
 	function($scope, $stateParams, $location, Authentication, Deals) {
 		$scope.authentication = Authentication;
 
+
 		// Create new Deal
 		this.create = function() {
 			// Create new Deal object
 			var deal = new Deals ({
+
 
 				title: this.title,
 				details: this.details,
@@ -32,6 +34,7 @@ angular.module('deals').controller('DealsController', ['$scope', '$stateParams',
 				$scope.error = errorResponse.data.message;
 			});
 		};
+
 
 		// Remove existing Deal
 		$scope.remove = function(deal) {
